@@ -1,0 +1,63 @@
+List List_create(void)
+//创建新列表
+//参数：void
+//返回：列表
+
+void List_append(List L, ElementType d)
+//向列表添加新元素
+//参数：1 列表  2 数据
+//返回：void
+
+int List_length(List L) 
+//列表长度
+//参数：1 列表
+//返回：列表长度
+
+int List_numsfind(List L, ElementType d)
+//按值查找
+//参数：1 列表  2 数据
+//返回：节点下标
+
+PtrToListNode List_indexfind(List L, int n)
+//按下标查找
+//参数：1 列表  2 下标
+//返回：列表节点
+
+void LIst_insert(List L, ElementType d, int n)
+//插入数据
+//参数：1 列表  2 数据  3 插入数据下标
+//返回：void
+
+int List_delet(List L, int n)  
+//删除数据
+//参数：1 列表  2删除数据下标
+//返回：int--0 失败 1 成功
+
+void List_show(List L)                                                                           
+//打印列表
+//参数：1 列表
+//返回：void
+
+Stack Stack_create()  
+//创造新栈
+//返回：栈
+
+void Stack_add(Stack s, ElementType d) 
+//向栈添加数据
+
+PtrToListNode Stack_pop(Stack s)
+//弹出栈顶元素
+
+
+PtrToNode Queue_create()
+//创造新队列
+
+void Queue_add(PtrToNode N, QueueElementType A)
+//向队列添加元素
+
+int Queue_isempty(PtrToNode N)
+//判断队列是否空
+
+PtrToQueueNode Queue_delete(PtrToNode N) 
+//出队
+
