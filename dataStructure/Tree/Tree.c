@@ -12,7 +12,7 @@ typedef TreeNode* PtrToTreeNode;
 typedef PtrToTreeNode Tree;
 typedef PtrToTreeNode BinTree;
 
-#include </home/ran/Documents/dataStructure/Tree/Queue.c>
+#include </home/ran/Documents/c_code/dataStructure/Tree/Queue.c>
 void Tree_inorderTraversal(Tree t)
 {
     if(t){
@@ -106,6 +106,7 @@ Tree Tree_create()
     return out;
 }
 
+
 void BinTree_insert(BinTree bt, TreeElementType d)
 {
     if(!bt->left && !bt->right){
@@ -114,13 +115,9 @@ void BinTree_insert(BinTree bt, TreeElementType d)
         bt->right= (PtrToTreeNode)malloc(sizeof(TreeNode));
     }else{
         if(d < bt->Data){
-            bt->left->Data = d;
-            bt->left->left = (PtrToTreeNode)malloc(sizeof(TreeNode));
-            bt->left->right = (PtrToTreeNode)malloc(sizeof(TreeNode));
+            BinTree_insert(bt->left, d);
         }else if(d > bt->Data){
-            bt->right->Data = d;
-            bt->right->left= (PtrToTreeNode)malloc(sizeof(TreeNode));
-            bt->right->right= (PtrToTreeNode)malloc(sizeof(TreeNode));
+            BinTree_insert(bt->right, d);
         }
     }
 }
@@ -129,3 +126,5 @@ BinTree BinTree_create(void)
 {
     return (BinTree)malloc(sizeof(TreeNode));
 }
+
+
