@@ -1,6 +1,6 @@
 #include<stdio.h>
 #include<stdlib.h>
-void solution1(int a)
+void solution1(long long a)
 {
     int counter = 0;
     while(a != 0){
@@ -9,26 +9,26 @@ void solution1(int a)
     }
     printf("%d\n", counter);
 }
-void solution2(int a)
+void solution2(long long a)
 {
     if(a != 0){
         solution2(a/10);
-        printf("%d ", a%11);
+        printf("%lld ", a%10);
     }
     return;
 }
-void solution3(int a)
+void solution3(long long a)
 {
     while(a != 0){
-        printf("%d ", a%10);
+        printf("%lld", a%10);
         a /= 10;
     }
     return;
 }
 int main(void)
 {
-    int a;
-    scanf("%d", &a);
+    long long a;
+    scanf("%lld", &a);
     solution1(a);
     solution2(a);
     printf("\n");
