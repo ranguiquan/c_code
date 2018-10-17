@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#define MAXDATA 10000
+#define MAXDATA 100000
 #define true 1
 #define false 0
 #define error -1
@@ -19,7 +19,7 @@ MaxHeap MaxHeap_create(int maxsize)
     MaxHeap out = (MaxHeap)malloc(sizeof(HeapNode));
     out->Data = (HeapElementType*)malloc(sizeof(HeapElementType)*(MAXDATA+1));
     out->Size = 0;
-    out->Capacity =maxsize;
+    out->Capacity = maxsize;
     out->Data[0] = MAXDATA;
     return out;
 }
@@ -65,3 +65,28 @@ HeapElementType MaxHeap_delet(MaxHeap h)
     h->Data[parent] = x;
     return maxitem;
 }
+
+void MaxHeap_percdown(MaxHeap h, int p)
+{//下滤，使以h->Data[p]为根的子堆为最大堆
+    int parent, child;
+    HeapElementType x = h->Data[p];//取根节点值
+    for(parent = p; parent*2 <= h->Size; parent = child)
+    {
+        child = parent*2;
+        if(child != h->Capacity && (h->Data[child+1] > h->Data[child])){
+            child++;
+        }
+        if(h->Data[child] <= x) break;
+        h->Data[parent] = h->Data[child];
+    }
+    h->Data[parent] = x;
+}
+
+void MaxHeap_buildheap(MaxHeap h)
+{
+    int i;
+    for(i = H->Size/2; i > 0; i--)
+        MaxHeap_percdown(h, i);
+}
+
+
