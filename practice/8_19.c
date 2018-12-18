@@ -1,10 +1,20 @@
 #include <stdio.h>
-#include <stdlib.h>
+#define BUF 10000
+char space[BUF];
+char* loc = space;
 
 void* new(int n)
 {
-    return malloc(n*sizeof(char));
-
+    if(loc-space + n <= BUF){
+        loc += n;
+        return loc-n;
+    }else{
+        return 0;
+    }
 }
 
-void free
+void free(char *p){
+    if(p >= space && p < space+BUF){
+        loc = p;
+    }
+}
