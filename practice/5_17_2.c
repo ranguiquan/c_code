@@ -35,7 +35,13 @@ char a[3] = {'A', 'B', 'C'};
 char b[3] = {'X', 'Y', 'Z'};
 int used[3] = {0,0,0};
 int ans[3];
-void solution2(int n)
+
+void solution2(void)
+{
+    solution2_module(0);
+}
+
+void solution2_module(int n)
 {
     int i;
     if(n == 3){
