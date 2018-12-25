@@ -11,12 +11,12 @@ int main(void)
     str[--i] = '\0';
     n = i;
     for(i = 0; i < n; i++){
-        if(str[i] == ' ' && str[i+1] == ' '){
+        while(str[i] == ' ' && str[i+1] == ' '){
             i++;
         }
         str_cp[j++] = str[i];
     }
     str_cp[j] = '\0';
-    printf("%s", str_cp);
+    printf("%s\n", str_cp);
     return 0;
 }

@@ -8,7 +8,6 @@ int main(void)
 {
     char end_option[BUF];
     strcpy(end_option, "END");
-    printf("%s", end_option);
     char add = '-';
     char minus = '+';
     char stations[BUF];
